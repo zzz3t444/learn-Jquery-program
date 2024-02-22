@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Form Sederhana</h1>
+    <form id="form-sederhana">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" />
+      <br />
+      <label for="hobi">Hobi:</label>
+      <br />
+      <input type="checkbox" id="hobi-membaca" name="hobi[]" value="membaca" />
+      <label for="hobi-membaca">Membaca</label>
+      <br />
+      <input type="checkbox" id="hobi-menulis" name="hobi[]" value="menulis" />
+      <label for="hobi-menulis">Menulis</label>
+      <br />
+      <label for="kota">Kota:</label>
+      <select id="kota" name="kota">
+        <option value="">Pilih Kota</option>
+        <option value="jakarta">Jakarta</option>
+        <option value="bandung">Bandung</option>
+        <option value="yogyakarta">Yogyakarta</option>
+      </select>
+      <br />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <br />
+    <div id="hasil"></div>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+          $(document).ready(function(){
+        $("#form-sederhana").submit(function(e){
+          e.preventDefault();
+
+
+          var nama = $("#nama").val();
+          var hobi = [];
+          $("#hobi-membaca:checked, #hobi-menulis:checked").each(function(){
+            hobi.push($(this).val());
+          });
+          var kota = $("#kota").val();
+
+
+          var hasil = "Nama: " + nama + "<br>";
+          hasil += "Hobi: " + hobi.join(", ") + "<br>";
+          hasil += "Kota: " + kota;
+          $("#hasil").html(hasil);
+        });
+      });
+    </script>
+  </body>
+</html>

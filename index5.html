@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Sederhana</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h2>Form Sederhana</h2>
+
+    <form id="myForm">
+      <div>
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" />
+      </div>
+      <div>
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat" />
+      </div>
+      <div>
+        <label for="hobi">Hobi:</label>
+        <select id="hobi" name="hobi">
+          <option value="Sepak Bola">Sepak Bola</option>
+          <option value="Bersepeda">Bersepeda</option>
+          <option value="Membaca">Membaca</option>
+        </select>
+      </div>
+      <div>
+        <input type="checkbox" id="subscribe" name="subscribe" />
+        <label for="subscribe">Subscribe</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+      $(document).ready(function(){
+        $("#myForm").submit(function(event){
+          event.preventDefault();
+
+          // Mengambil nilai input
+          var nama = $("#nama").val();
+          var alamat = $("#alamat").val();
+          var hobi = $("#hobi").val();
+          var subscribe = $("#subscribe").prop("checked") ? "Ya" : "Tidak";
+
+          // Menampilkan hasil di bawah form
+          $("#result").html("<h3>Hasil Isian Form:</h3>" +
+                            "<p>Nama: " + nama + "</p>" +
+                            "<p>Alamat: " + alamat + "</p>" +
+                            "<p>Hobi: " + hobi + "</p>" +
+                            "<p>Subscribe: " + subscribe + "</p>");
+        });
+      });
+    </script>
+  </body>
+</html>

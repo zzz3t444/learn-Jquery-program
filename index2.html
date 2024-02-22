@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Belajar jQuery</h1>
+    <button id="tombol_hide">Sembunyikan</button>
+    <button id="tombol_show">Tampilkan</button>
+    <button id="tombol_small">Perkecil</button>
+    <button id="tombol_red">Merahkan</button>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+          $( document ).ready(function() {
+      $( "#tombol_hide" ).click(function() {
+      $("h1").hide();
+      });
+      $( "#tombol_show" ).click(function() {
+      $("h1").show();
+      });
+      $( "#tombol_small" ).click(function() {
+      $("h1").css("font-size","20px");
+      });
+      $( "#tombol_red" ).click(function() {
+      $("h1").css( "color", "red" );
+      });
+      });
+    </script>
+  </body>
+</html>

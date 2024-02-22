@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Belajar jQuery</h1>
+    <button id="tombol">Click Me!</button>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function() {
+      $("#tombol").click(function() {
+      $(this).after('<p>Sedang Belajar jQuery</p>');
+      });
+      });
+    </script>
+  </body>
+</html>

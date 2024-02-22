@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Sebuah paragraf tanpa atribut apapun</p>
+    <p id="belajar">Sebuah paragraf dengan id = "belajar"</p>
+    <p class="warna">Sebuah paragraf dengan class = "warna"</p>
+    <p id="test" class="saja">Sebuah paragraf dengan id="test" class="saja"</p>
+    <div>
+      <p class="warna">Sebuah paragraf tanpa atribut apapun</p>
+    </div>
+    <button id="tombol">Action</button>
+
+    <script src="jquery-3.7.1.js"></script>
+
+    <script>
+      $( document ).ready(function() {
+      $("#tombol").click(function() {
+      $("p").css( "color", "red" );
+      $("#belajar").css( "color", "green" );
+      $(".warna").css( "color", "blue" );
+      $("#test.saja").css( "color", "yellow" );
+      $("div p.warna").css( "color", "pink" );
+      });
+      });
+    </script>
+  </body>
+</html>
